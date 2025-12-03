@@ -22,9 +22,7 @@ Ubuntu, Linux: Alt+Ctrl+T
 在项目根目录 (`$ bandori-parking/`) 打开命令行，输入
 
 ```
-
 npm link
-
 ```
 
 进行配置。
@@ -32,9 +30,7 @@ npm link
 以后直接在终端命令行内输入命令即可，路径任意。命令格式示例：
 
 ```
-
 bandori-parking --mode 6 --boost 1 --fire 0 --calculate 533 --num 167545
-
 ```
 
 更多实例敬请参照`examples/sample-commands.txt`
@@ -46,16 +42,12 @@ bandori-parking --mode 6 --boost 1 --fire 0 --calculate 533 --num 167545
 常规
 
 ```
-
 npx http-server .
-
 ```
 
 禁用缓存
 
 ```
-
 npx http-server . -c-1
-
 ```
 
