@@ -1,0 +1,9 @@
+{
+  "name": "bandori-parking",
+  "version": "1.0.0",
+  "bin": {
+    "bandori-score": "./bin/index.js",
+    "bandori-parking": "./bin/index.js"
+  },
+  "type": "module"
+}

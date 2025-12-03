@@ -1,0 +1,13 @@
+# 查看帮助 (活动类型序号/算分公式/命令选项) 
+bandori-score -h
+bandori-score --help
+bandori-score -?
+
+# 示例 1: 旧课题活动; 100%活动加成, 0火, 167545副队综合力; 目标点数533
+bandori-score --mode 6 --boost 100 --fire 0 --calculate 533 --num 167545
+
+# 示例 2: 三组曲活动; 0%活动加成, 0火, 演奏1曲; 目标点数113 (对邦/5v5/组曲 boost加成倍率须为0)
+bandori-parking --mode 14 --num 30 --calculate 113
+
+# 示例 3: 三组曲活动; 0%活动加成, [1, 0]火, 演奏2曲; 目标点数660 (吃火顺序无影响)
+bandori-score -mode 14 --medley "1,0,1,1,1,1,1," -calc 660 -n 65

@@ -1,0 +1,96 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bandori Parking Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                bandori: {
+                  vivid: "#ff3377",
+                  light: "#ffa5db"
+                },
+                cli: {
+                  flag: "#38bdf8",
+                  value: "#4ade80",
+                  error: "#f87171",
+                  other: "#ba68c8"
+                }
+              }
+            }
+          }
+        }
+    </script>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 dark:text-gray-100 min-h-screen p-6 transition-colors duration-300">
+
+<div class="max-w-4xl mx-auto bg-white dark:bg-gray-800 shadow rounded-xl p-6 space-y-6">
+    <div class="flex justify-between items-center">
+        <h1 class="text-2xl font-bold" id="page_title">Bandori Parking Calculator</h1>
+        <div class="flex space-x-4">
+            <button id="langBtn" class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded text-sm">EN / 中文 / 日本語</button>
+            <button id="themeBtn" class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded text-sm">🌙</button>
+        </div>
+    </div>
+
+    <!-- CLI input -->
+    <div>
+        <label class="font-semibold" id="label_cli">命令行输入</label>
+        <input id="cliInput" class="w-full mt-1 p-2 border rounded font-mono dark:bg-gray-700 dark:border-gray-600" placeholder="键入 bandori-parking --? 以查看指令菜单">
+    </div>
+    <div class="w-full mt-1 p-2 h-10 rounded bg-gray-100 dark:bg-gray-900 overflow-auto">
+        <pre id="cliHighlight" class="font-mono whitespace-pre pointer-events-none text-transparent"></pre>
+    </div>
+
+
+    <!-- Form fields -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+            <label id="label_mode">Event Mode</label>
+            <input id="mode" class="w-full p-2 border rounded dark:bg-gray-700 dark:border-gray-600" placeholder="1 ~ 14">
+        </div>
+        <div>
+            <label id="label_boost">Event Boost (%)</label>
+            <input id="boost" class="w-full p-2 border rounded dark:bg-gray-700 dark:border-gray-600" placeholder="通常为 0 ~ 365">
+        </div>
+        <div>
+            <label id="label_fire">Fire</label>
+            <input id="fire" class="w-full p-2 border rounded dark:bg-gray-700 dark:border-gray-600" placeholder="0 / 1 / 2 / 3">
+        </div>
+        <div>
+            <label id="label_num">Num 参数</label>
+            <input id="num" class="w-full p-2 border rounded dark:bg-gray-700 dark:border-gray-600" placeholder="副队/排名/底分等">
+        </div>
+        <div>
+            <label id="label_medley">Medley</label>
+            <input id="medley" class="w-full p-2 border rounded dark:bg-gray-700 dark:border-gray-600" placeholder="例如 1,0,3">
+        </div>
+        <div class="flex flex-col">
+            <label id="label_team">Team (5v5团队live获胜请勾选)</label>
+            <input id="team" type="checkbox" class="h-5 w-5 mt-2 accent-blue-600">
+        </div>
+        <div class="md:col-span-2">
+            <label id="label_calculate">Target Points (calculate参数)</label>
+            <input id="calculate" class="w-full p-2 border rounded dark:bg-gray-700 dark:border-gray-600" placeholder="必填">
+        </div>
+    </div>
+
+    <!-- Exec. Button -->
+    <button id="execBtn" class="px-4 py-2 bg-blue-600 text-white rounded shadow">计算!</button>
+
+    <!-- Output -->
+    <div>
+        <label id="label_output" class="font-semibold">控分结果</label>
+        <pre id="output" class="bg-gray-100 dark:bg-gray-900 text-emerald-600 dark:text-green-300 p-4 rounded h-64 overflow-auto"></pre>
+    </div>
+</div>
+
+<script type="module" src="./ui.js"></script>
+</body>
+</html>
